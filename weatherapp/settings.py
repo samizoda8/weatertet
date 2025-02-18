@@ -30,7 +30,13 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 PORT = os.getenv("PORT", "10000")  # По умолчанию Render использует порт 10000
-ALLOWED_HOSTS = ["weatertet-2.onrender.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "weatertet-2.onrender.com",  # Укажи точный адрес твоего сайта на Render
+    "localhost",
+    "127.0.0.1",
+    os.getenv("RENDER_EXTERNAL_HOSTNAME", ""),  # Позволяет Render правильно работать
+]
+
 
 
 
