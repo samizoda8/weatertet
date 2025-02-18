@@ -28,7 +28,10 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = ["weatertet.onrender.com"]
+
+PORT = os.getenv("PORT", "10000")  # По умолчанию Render использует порт 10000
+ALLOWED_HOSTS = ["weatertet-2.onrender.com", "localhost", "127.0.0.1"]
+
 
 
 # Application definition
